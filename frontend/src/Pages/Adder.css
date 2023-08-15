@@ -1,0 +1,24 @@
+.Adder {
+    background-color: aliceblue;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
+
+.DateHolder {
+    font-family: 'Calligraffitti', cursive;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #b2c4f3;
+    text-shadow: 2px 2px #4c97f3,
+    4px 4px #62daff,
+    6px 6px #6a85de,
+    8px 8px #5070ef,
+    10px 10px #6868AC
+}
