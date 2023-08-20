@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import {DateContext} from "../App";
 import BasicButtons from "../Components/Button";
-import './Adder.css';
+import './DayDetails.css';
 
-function Adder() {
+function DayDetails() {
     const {date} = useContext(DateContext);
     return (
         <div className="Adder">
@@ -14,4 +14,4 @@ function Adder() {
     );
 }
 
-export default Adder;
+export default DayDetails;

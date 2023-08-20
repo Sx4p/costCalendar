@@ -1,7 +1,7 @@
 import './App.css';
 import React, {createContext, useState} from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Adder from "./Pages/Adder";
+import DayDetails from "./Pages/DayDetails";
 import Main from "./Pages/Main";
 
 const router = createBrowserRouter([
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/add",
-        element: <Adder/>
+        element: <DayDetails/>
     }
 ])
 
