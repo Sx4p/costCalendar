@@ -1,6 +1,7 @@
 .Main {
-  background-image: url("https://img.freepik.com/free-vector/watercolor-alcohol-ink-background_23-2149232011.jpg?w=1380&t=st=1692125558~exp=1692126158~hmac=f0f549e5c5bdf42daf84bbd0499d2091423d0929221458a5dd98a2293908bb7a");
-  background-size: 100%;
+  background-image: url("https://cdn.discordapp.com/attachments/1068210272344494110/1142908030615302195/no-watermark.jpg");
+  background-position: center center;
+  background-size: cover;
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -11,4 +12,5 @@
   color: steelblue;
   font-family: 'Calligraffitti', cursive;
   font-weight: 800;
+  background-attachment: fixed;
 }
