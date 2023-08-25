@@ -1,16 +1,24 @@
-.Main {
+html, body {
+  height: 100%;
+  margin: 0;
   background-image: url("https://cdn.discordapp.com/attachments/1068210272344494110/1142908030615302195/no-watermark.jpg");
   background-position: center center;
   background-size: cover;
+  background-attachment: fixed;
+}
+
+#root {
+  height: 100%;
+}
+
+.Main{
+  padding-top: 80px;
   text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(40px + 2vmin);
   color: steelblue;
   font-family: 'Calligraffitti', cursive;
   font-weight: 800;
-  background-attachment: fixed;
 }
+
