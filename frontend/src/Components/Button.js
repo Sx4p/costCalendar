@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import {useNavigate} from "react-router-dom";
 
-function BasicButtons({buttonText}) {
+function BasicButton({buttonText}) {
     const navigate = useNavigate();
 
     return (
@@ -12,4 +12,4 @@ function BasicButtons({buttonText}) {
     );
 }
 
-export default BasicButtons;
+export default BasicButton;
