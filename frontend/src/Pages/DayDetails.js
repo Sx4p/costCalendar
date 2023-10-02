@@ -1,11 +1,10 @@
 import React, {useContext, useState} from 'react';
 import {DateContext} from "../App";
-import BasicButtons from "../Components/Button";
+import BasicButton from "../Components/Button";
 import './DayDetails.css';
-import MyIconButton from "../Components/MyIconButton";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Stack from "@mui/material/Stack";
 import Financials from "../Components/Financials";
+import FinancialsForm from "../Components/FinancialsForm";
 
 function DayDetails() {
     const {date} = useContext(DateContext);
@@ -31,14 +30,19 @@ function DayDetails() {
         setFinancials(copy);
     }
 
+    const handleSave = (item) => {
+        item.id = financials.length + 1;
+        setFinancials([...financials, item])
+    }
+
     return (
         <div className="DayDetails">
             <p className="DateHolder">{date}</p>
             <Stack>
                 <Financials financials={financials} handleDelete={handleDelete}/>
             </Stack>
-            <MyIconButton icon={<AddCircleOutlineIcon/>} handleOnClick={() => console.log("add new item")}/>
-            <BasicButtons buttonText={"Save"}/>
+            <FinancialsForm handleSave={handleSave}/>
+            <BasicButton buttonText={"Save"}/>
         </div>
 
     );
