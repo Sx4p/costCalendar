@@ -64,8 +64,8 @@ function FinancialsForm({handleSave}) {
                                 <MenuItem value="">
                                     <em>None</em>
                                 </MenuItem>
-                                <MenuItem value="expenditure">Expenditure</MenuItem>
-                                <MenuItem value="revenue">Revenue</MenuItem>
+                                <MenuItem value="INCOME">Income</MenuItem>
+                                <MenuItem value="EXPENSE">Expense</MenuItem>
                             </Select>
                         </FormControl>
                         <TextField
@@ -75,7 +75,6 @@ function FinancialsForm({handleSave}) {
                             margin="dense"
                             id="subtype"
                             label="Subtype"
-                            /*type="subtype"*/
                             fullWidth
                             variant="outlined"
                             onChange={(event) => setSubtype(event.target.value)}/>

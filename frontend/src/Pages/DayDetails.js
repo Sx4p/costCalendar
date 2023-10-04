@@ -1,39 +1,47 @@
-import React, {useContext, useState} from 'react';
-import {DateContext} from "../App";
+import React, {useEffect, useState} from 'react';
 import BasicButton from "../Components/Button";
 import './DayDetails.css';
 import Stack from "@mui/material/Stack";
 import Financials from "../Components/Financials";
 import FinancialsForm from "../Components/FinancialsForm";
+import {useParams} from "react-router-dom";
+
+const getFinancialsByDate = (date) => {
+    return fetch(`/api/financials/${date}`, {})
+        .then((res) => {
+            if (res.ok) {
+                return res.json();
+            }
+        });
+}
 
 function DayDetails() {
-    const {date} = useContext(DateContext);
-    const [financials, setFinancials] = useState([
-            {id: 1, type: "expenditure", subtype: "napszecsa", amount: 1500},
-            {id: 2, type: "expenditure", subtype: "ebéd", amount: 2500},
-            {id: 3, type: "expenditure", subtype: "vonaljegy", amount: 450},
-            {id: 4, type: "revenue", subtype: "bem bevi", amount: 25500},
-            {id: 5, type: "revenue", subtype: "bem bevi", amount: 23000},
-            {id: 6, type: "revenue", subtype: "bem bevi", amount: 21500}
-        ]
-    );
+    const {date} = useParams();
+    const [financials, setFinancials] = useState([]);
+
+    useEffect(() => {
+        if (date !== undefined) {
+            getFinancialsByDate(date).then(financials => setFinancials(financials))
+        }
+    }, [date])
 
     const handleDelete = (id) => {
-        const copy = [...financials];
-
-        for (let i = 0; i < copy.length; i++) {
-            let obj = copy[i];
-            if (obj.id === parseInt(id)) {
-                copy.splice(i, 1);
-            }
-        }
-        setFinancials(copy);
+        console.log("delete")
     }
 
     const handleSave = (item) => {
-        item.id = financials.length + 1;
-        setFinancials([...financials, item])
-    }
+        console.log(item)
+        item.date = date;
+        return fetch(`/api/financials/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(item),
+        }).then((res) => res.json())
+            .then((item) => setFinancials([...financials, item]))
+
+    };
 
     return (
         <div className="DayDetails">

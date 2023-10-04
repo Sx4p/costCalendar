@@ -1,5 +1,5 @@
 import './App.css';
-import React, {createContext, useState} from "react";
+import React from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import DayDetails from "./Pages/DayDetails";
 import Main from "./Pages/Main";
@@ -15,26 +15,16 @@ const router = createBrowserRouter([
                 element: <Main/>
             },
             {
-                path: "/add",
+                path: "/add/:date",
                 element: <DayDetails/>
             }
         ]
     }
 ])
 
-export const DateContext = createContext({
-    date: null, setDate: () => {
-    }
-})
-
 function App() {
-    const [date, setDate] = useState();
     return (
-        <DateContext.Provider value={{date, setDate}}>
-            <>
-                <RouterProvider router={router}/>
-            </>
-        </DateContext.Provider>
+        <RouterProvider router={router}/>
     );
 }
 
