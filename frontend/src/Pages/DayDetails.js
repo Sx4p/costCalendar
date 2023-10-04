@@ -26,11 +26,19 @@ function DayDetails() {
     }, [date])
 
     const handleDelete = (id) => {
-        console.log("delete")
+        return fetch(`/api/financials/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }).then((res) => {
+            if (res.ok) {
+                setFinancials(financials.filter(item => item.id !== id));
+            }
+        })
     }
 
     const handleSave = (item) => {
-        console.log(item)
         item.date = date;
         return fetch(`/api/financials/`, {
             method: "POST",
@@ -40,7 +48,6 @@ function DayDetails() {
             body: JSON.stringify(item),
         }).then((res) => res.json())
             .then((item) => setFinancials([...financials, item]))
-
     };
 
     return (
