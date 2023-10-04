@@ -2,6 +2,7 @@ package com.example.backend.service;
 
 import com.example.backend.model.Financials;
 import com.example.backend.repository.FinancialsRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +25,11 @@ public class FinancialsService {
 
     public Financials postFinancials(Financials financials) {
         return financialsRepository.save(financials);
+    }
+
+    public boolean deleteFinancials(Long id) {
+        Financials financialsToDelete = financialsRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        financialsRepository.delete(financialsToDelete);
+        return true;
     }
 }
