@@ -1,21 +1,11 @@
-.DayDetails {
-    background-color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 90%;
-    overflow: hidden;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
 
 .DateHolder {
     font-family: 'Calligraffitti', cursive;
-    font-weight: 700;
+    margin: 5px;
+    font-weight: 800;
     font-size: 3rem;
     color: #b2c4f3;
-    text-shadow: 2px 2px #4c97f3,
-    4px 4px #62daff,
-    6px 6px #6a85de,
-    8px 8px #6262a9
+    text-shadow: 2px 2px #6a85de,
+    4px 4px #6262a9
 }

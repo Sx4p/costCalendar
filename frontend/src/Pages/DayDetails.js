@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import BasicButton from "../Components/Button";
 import './DayDetails.css';
-import Stack from "@mui/material/Stack";
 import Financials from "../Components/Financials";
 import FinancialsForm from "../Components/FinancialsForm";
 import {useParams} from "react-router-dom";
+import {Card, Grid} from "@mui/material";
 
 const getFinancialsByDate = (date) => {
     return fetch(`/api/financials/${date}`, {})
@@ -51,15 +51,27 @@ function DayDetails() {
     };
 
     return (
-        <div className="DayDetails">
-            <p className="DateHolder">{date}</p>
-            <Stack>
+        <Grid
+            container
+            direction="column"
+            alignItems="center"
+        >
+            <Card sx={{
+                boxShadow: 3,
+                backgroundColor: "white",
+                opacity: "0.8",
+                width: "55%",
+                padding: "40px",
+                margin: "20px",
+                textAlign: "center",
+                borderRadius: "30px"
+            }}>
+                <p className="DateHolder">{date}</p>
                 <Financials financials={financials} handleDelete={handleDelete}/>
-            </Stack>
-            <FinancialsForm handleSave={handleSave}/>
-            <BasicButton buttonText={"Save"}/>
-        </div>
-
+                <FinancialsForm handleSave={handleSave}/>
+                <BasicButton buttonText={"Back"}/>
+            </Card>
+        </Grid>
     );
 }
 
