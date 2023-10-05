@@ -7,7 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import MyIconButton from "./MyIconButton";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import {createTheme, FormControl, InputLabel, MenuItem, Select, Snackbar, ThemeProvider} from "@mui/material";
+import {createTheme, FormControl, Grid, InputLabel, MenuItem, Select, Snackbar, ThemeProvider} from "@mui/material";
 import {useState} from "react";
 import Alert from "@mui/material/Alert";
 
@@ -42,7 +42,11 @@ function FinancialsForm({handleSave}) {
     });
 
     return (
-        <div>
+        <Grid
+            container
+            direction="column"
+            alignItems="center"
+        >
             <ThemeProvider theme={theme}>
                 <MyIconButton icon={<AddCircleOutlineIcon/>} handleOnClick={handleClickOpen}/>
                 <Dialog open={open} onClose={() => setOpen(false)}>
@@ -101,7 +105,7 @@ function FinancialsForm({handleSave}) {
                     </Snackbar>
                 </Dialog>
             </ThemeProvider>
-        </div>
+        </Grid>
     );
 }
 

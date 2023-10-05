@@ -7,31 +7,34 @@ export default function Financials({financials, handleDelete}) {
     const rows = financials;
 
     const columns = [
-        {field: "id", headerName: "ID", width: 100},
+        {field: "id", headerName: "ID", flex: 0.1, minWidth: 100},
         {
             field: "type",
             headerName: "Type",
-            width: 200,
+            flex: 0.2,
+            minWidth: 200,
             editable: false,
         },
         {
             field: "subtype",
             headerName: "Subtype",
-            width: 200,
+            flex: 0.2,
+            minWidth: 200,
             editable: false,
         },
         {
             field: "amount",
             headerName: "Amount",
             type: "number",
-            width: 150,
+            flex: 0.2,
+            minWidth: 150,
             editable: false,
         },
         {
             field: "actions",
             type: "actions",
             headerName: "Delete",
-            width: "150",
+            flex: 0.2,
             align: "center",
             headerAlign: 'center',
             cellClassName: "actions",
