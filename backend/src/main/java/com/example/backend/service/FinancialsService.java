@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Financials;
+import com.example.backend.model.Type;
 import com.example.backend.repository.FinancialsRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,13 @@ public class FinancialsService {
         Financials financialsToDelete = financialsRepository.findById(id).orElseThrow(EntityNotFoundException::new);
         financialsRepository.delete(financialsToDelete);
         return true;
+    }
+
+    public Set<Financials> getAllIncome() {
+        return financialsRepository.getFinancialsByType(Type.INCOME);
+    }
+
+    public Set<Financials> getAllExpense() {
+        return financialsRepository.getFinancialsByType(Type.EXPENSE);
     }
 }
