@@ -1,0 +1,34 @@
+.MuiCalendarPicker-root > div:first-child {
+    padding-left: 22px;
+    padding-right: 18px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.MuiCalendarPicker-root > div:last-child > div:first-child > div:first-child > div:last-child {
+    height: 550px;
+}
+
+.MuiCalendarPicker-root > div:first-child > div {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.MuiCalendarPicker-root > div:first-child > div:last-child > div {
+    width: 25px;
+}
+
+.MuiCalendarPicker-root > div > div > div > div > div * {
+    margin: 8px 20px;
+    font-size: 20px;
+    font-family: 'Calligraffitti', cursive;
+}
+
+.MuiCalendarPicker-root > div > div > div * {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: 'Calligraffitti', cursive;
+}
+
+
