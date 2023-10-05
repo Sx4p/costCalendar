@@ -39,4 +39,14 @@ public class FinancialsController {
             return ResponseEntity.status(404).build();
         }
     }
+
+    @GetMapping("/incomes")
+    public Set<Financials> getAllIncome() {
+        return financialsService.getAllIncome();
+    }
+
+    @GetMapping("/expenses")
+    public Set<Financials> getAllExpense() {
+        return financialsService.getAllExpense();
+    }
 }
