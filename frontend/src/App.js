@@ -4,6 +4,8 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import DayDetails from "./Pages/DayDetails";
 import Main from "./Pages/Main";
 import NavBar from "./Components/NavBar";
+import Incomes from "./Pages/Incomes";
+import Expenses from "./Pages/Expenses";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
             {
                 path: "/add/:date",
                 element: <DayDetails/>
+            },
+            {
+                path: "/incomes",
+                element: <Incomes/>
+            },
+            {
+                path: "/expenses",
+                element: <Expenses/>
             }
         ]
     }

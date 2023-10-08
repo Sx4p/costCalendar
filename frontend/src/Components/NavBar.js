@@ -9,7 +9,10 @@ import EditCalendarOutlinedIcon from '@mui/icons-material/EditCalendarOutlined';
 import {Link, Outlet} from "react-router-dom";
 import {MenuItem} from "@mui/material";
 
-const pages = ['Expenses', 'Incomes', 'Financial statements'];
+const pages = [
+    {name: "Expenses", path: "/expenses"},
+    {name: "Incomes", path: "/incomes"},
+    {name: "Financial statements", path: "/statements"}];
 
 function NavBar() {
     return (
@@ -19,12 +22,13 @@ function NavBar() {
                     <MenuItem component={Link} to={"/"}>
                         <Typography sx={{display: "flex"}}>
                             <EditCalendarOutlinedIcon href="/" sx={{display: "flex"}}/>
-                            <Typography
-                                variant="h6"
+                            <Box
+                                component="span"
                                 href="/"
                                 sx={{
                                     display: {xs: "none", md: "inline-block"},
                                     fontWeight: 700,
+                                    fontSize: 20,
                                     fontFamily: "Calligraffitti",
                                     letterSpacing: ".3rem",
                                     color: "inherit",
@@ -32,20 +36,21 @@ function NavBar() {
                                     paddingLeft: "5px"
                                 }}>
                                 Cost Calendar
-                            </Typography>
+                            </Box>
                         </Typography>
                     </MenuItem>
                     <Box sx={{flexGrow: 1, display: "flex"}}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.name}
+                                href={page.path}
                                 sx={{
                                     my: 2, color: 'white', display: 'block', margin: "10px",
                                     '&:hover': {
                                         border: "0.5px solid",
                                         borderColor: "white"
                                     }
-                                }}>{page}</Button>
+                                }}>{page.name}</Button>
                         ))}
                     </Box>
                 </Toolbar>
