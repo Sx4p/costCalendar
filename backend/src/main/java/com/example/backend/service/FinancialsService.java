@@ -41,4 +41,12 @@ public class FinancialsService {
     public Set<Financials> getAllExpense() {
         return financialsRepository.getFinancialsByType(Type.EXPENSE);
     }
+
+    public Set<Financials> getAllIncomeBetweenDates(LocalDate fromDate, LocalDate toDate) {
+        return financialsRepository.getFinancialsByTypeAndDateBetween(Type.INCOME, fromDate, toDate);
+    }
+
+    public Set<Financials> getAllExpenseBetweenDates(LocalDate fromDate, LocalDate toDate) {
+        return financialsRepository.getFinancialsByTypeAndDateBetween(Type.EXPENSE, fromDate, toDate);
+    }
 }

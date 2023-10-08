@@ -49,4 +49,14 @@ public class FinancialsController {
     public Set<Financials> getAllExpense() {
         return financialsService.getAllExpense();
     }
+
+    @GetMapping("/incomes/{fromDate}/{toDate}")
+    public Set<Financials> getAllIncomeBetweenDates(@PathVariable LocalDate fromDate, @PathVariable LocalDate toDate) {
+        return financialsService.getAllIncomeBetweenDates(fromDate, toDate);
+    }
+
+    @GetMapping("/expenses/{fromDate}/{toDate}")
+    public Set<Financials> getAllExpenseBetweenDates(@PathVariable LocalDate fromDate, @PathVariable LocalDate toDate) {
+        return financialsService.getAllExpenseBetweenDates(fromDate, toDate);
+    }
 }

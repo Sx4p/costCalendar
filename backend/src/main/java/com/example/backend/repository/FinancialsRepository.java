@@ -14,4 +14,6 @@ public interface FinancialsRepository extends JpaRepository<Financials, Long> {
     Set<Financials> getFinancialsByDate(LocalDate date);
 
     Set<Financials> getFinancialsByType(Type type);
+
+    Set<Financials> getFinancialsByTypeAndDateBetween(Type type, LocalDate date, LocalDate date2);
 }
