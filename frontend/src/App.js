@@ -6,6 +6,7 @@ import Main from "./Pages/Main";
 import NavBar from "./Components/NavBar";
 import Incomes from "./Pages/Incomes";
 import Expenses from "./Pages/Expenses";
+import Statements from "./Pages/Statements";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: "/expenses",
                 element: <Expenses/>
+            },
+            {
+                path: "/statements",
+                element: <Statements/>
             }
         ]
     }
