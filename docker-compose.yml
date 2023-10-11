@@ -1,0 +1,29 @@
+version: '3.8'
+name: 'costcalendar'
+
+services:
+  backend:
+    image: 'costcalendarbe:latest'
+    container_name: 'CostCalendarBackend'
+    build:
+      context: .
+      dockerfile: 'DockerfileBE'
+    ports:
+      - '8080:8080'
+    environment:
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+
+  frontend:
+    image: 'costcalendarfe:latest'
+    build:
+      context: .
+      dockerfile: DockerfileFE
+    container_name: CostCalendarFrontend
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+    depends_on:
+      - backend
