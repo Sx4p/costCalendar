@@ -4,7 +4,7 @@
 [![LinkedIn][linkedin-shield-eszter]][linkedin-url-eszter]
 
 <div align="center">
-  <a href="https://github.com/Sx4p/petProject">
+  <a href="https://github.com/Sx4p/costCalendar">
     <img src="https://i.imgur.com/Tx3TS6S.png" alt="Logo" width="406" height="101">
   </a>
 
@@ -105,9 +105,9 @@ Follow this guide to run and try the application. First you have to create a hos
 1. Open the terminal.
 2. Clone the repository.
     ```sh
-    git clone https://github.com/Sx4p/petProject.git
+    git clone https://github.com/Sx4p/costCalendar.git
     ```
-3. Navigate into the project folder with ``cd petProject`` command.
+3. Navigate into the project folder with ``cd costCalendar`` command.
 4. Set the environment variables:
     Username can be found in your Supabase project.
     ```sh
@@ -135,15 +135,15 @@ Follow this guide to run and try the application. First you have to create a hos
 Eszter Gyöngyvér Erdélyi -  esztergyerdelyi@gmail.com
 <br />
 
-Project Link: https://github.com/Sx4p/petProject
+Project Link: https://github.com/Sx4p/costCalendar
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/Sx4p/petProject.svg?style=for-the-badge
-[contributors-url]: https://github.com/Sx4p/petProject/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/Sx4p/costCalendar.svg?style=for-the-badge
+[contributors-url]: https://github.com/Sx4p/costCalendar/graphs/contributors
 
 [linkedin-shield-eszter]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url-eszter]: https://www.linkedin.com/in/eszter-erdelyi/
